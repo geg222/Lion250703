@@ -14,7 +14,14 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomeLayout><Main /></HomeLayout>} />
+        <Route
+          path="/"
+          element={
+            <HomeLayout>
+              <Main />
+            </HomeLayout>
+          }
+        />
         <Route
           path="/login"
           element={
@@ -31,10 +38,38 @@ function App() {
             </AuthLayout>
           }
         />
-        <Route path="/notice" element={<HomeLayout><Notice /></HomeLayout>} />
-        <Route path="/postcreate" element={<HomeLayout><NepyeonAnswer /></HomeLayout>} />
-        <Route path="/write-post" element={<HomeLayout><PostCreate /></HomeLayout>} />
-        <Route path="/post/:id" element={<HomeLayout><PostDetail /></HomeLayout>} />
+        <Route
+          path="/notice"
+          element={
+            <HomeLayout>
+              <Notice />
+            </HomeLayout>
+          }
+        />
+        <Route
+          path="/postcreate"
+          element={
+            <HomeLayout>
+              <NepyeonAnswer />
+            </HomeLayout>
+          }
+        />
+        <Route
+          path="/write-post"
+          element={
+            <HomeLayout>
+              <PostCreate />
+            </HomeLayout>
+          }
+        />
+        <Route
+          path="/post/:id"
+          element={
+            <HomeLayout>
+              <PostDetail />
+            </HomeLayout>
+          }
+        />
       </Routes>
     </div>
   );

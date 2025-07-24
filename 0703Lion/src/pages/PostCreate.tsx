@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import styles from "./PostCreate.module.scss";
+import axios from "axios";
+
+type FormData = {};
 
 const PostCreate = () => {
   const [formData, setFormData] = useState({
@@ -14,30 +17,32 @@ const PostCreate = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       boardType: {
         ...prev.boardType,
-        [name]: checked
-      }
+        [name]: checked,
+      },
     }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      file
+      file,
     }));
   };
 
@@ -45,27 +50,26 @@ const PostCreate = () => {
     fileInputRef.current?.click();
   };
 
-  const handleSubmit = () => {
-    // 게시판 선택 검증
-    if (!formData.boardType.answer && !formData.boardType.info) {
-      alert("게시판을 선택해주세요.");
-      return;
-    }
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      const data = {
+        user_id: 1,
+        worksheet_id: 1,
+        title: formData.title,
+        content: formData.content,
+        type: 1,
+      };
 
-    // 제목 검증
-    if (!formData.title.trim()) {
-      alert("게시글 제목을 입력해주세요.");
-      return;
-    }
+      const response = await axios.post(
+        "http://43.202.217.156:8080/api/posting",
+        data
+      );
 
-    // 내용 검증
-    if (!formData.content.trim()) {
-      alert("게시글 내용을 입력해주세요.");
-      return;
+      console.log("Response:", response);
+    } catch (error) {
+      console.error("Error submitting form:", error);
     }
-
-    console.log("폼 데이터:", formData);
-    alert("게시글이 성공적으로 등록되었습니다!");
   };
 
   return (
@@ -124,23 +128,28 @@ const PostCreate = () => {
 
           <div className={styles.formGroup}>
             <h2 className={styles.sectionTitle}>내 결과지 가져오기(선택)</h2>
-            <div className={styles.fileUploadArea} onClick={handleFileUploadClick}>
+            <div
+              className={styles.fileUploadArea}
+              onClick={handleFileUploadClick}
+            >
               <span className={styles.uploadIcon}>+</span>
               <p className={styles.uploadText}>
-                {formData.file ? formData.file.name : "파일을 선택하거나 여기에 드래그하세요"}
+                {formData.file
+                  ? formData.file.name
+                  : "파일을 선택하거나 여기에 드래그하세요"}
               </p>
             </div>
             <input
               ref={fileInputRef}
               type="file"
               onChange={handleFileChange}
-              style={{ display: 'none' }}
+              style={{ display: "none" }}
               accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"
             />
           </div>
         </form>
       </div>
-      
+
       <div className={styles.buttonContainer}>
         <button onClick={handleSubmit} className={styles.submitButton}>
           등록하기
@@ -150,4 +159,4 @@ const PostCreate = () => {
   );
 };
 
-export default PostCreate; 
+export default PostCreate;
