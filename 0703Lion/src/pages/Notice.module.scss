@@ -1,0 +1,58 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #333;
+}
+
+.noticeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.noticeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.noticeTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+.noticeDate {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.noticeContent {
+  padding-left: 0.2rem;
+}
+
+.noticeNumber {
+  padding-right: 1rem;
+}

@@ -1,0 +1,36 @@
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.button {
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  display: flex;
+  border: 1px solid #15e218;
+  background-color: #15e218;
+  width: 20%;
+}
+
+.buttonText {
+  color: #000904;
+  font-size: 0.9rem;
+}

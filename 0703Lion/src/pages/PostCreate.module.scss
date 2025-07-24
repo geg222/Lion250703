@@ -1,0 +1,156 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* Add small margin to separate from button */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}
+
+.checkboxGroup {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 200px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}
+
+.fileUploadArea {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+}
+
+.uploadIcon {
+  font-size: 3rem;
+  color: #666;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.uploadText {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.buttonContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+}
+
+.submitButton {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+
+  &:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+} 

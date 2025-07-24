@@ -1,0 +1,206 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #666;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &.active {
+    background-color: #1e40af;
+    color: white;
+  }
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.popularSection {
+  margin-bottom: 4rem;
+}
+
+.popularPosts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.popularCard {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.questionPrefix {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.content {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.postsSection {
+  padding: 2rem;
+}
+
+.postsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+
+  .sectionTitle {
+    margin: 0;
+    text-align: left;
+    font-size: 2.5rem;
+  }
+}
+
+.writeButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #2563eb;
+  }
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+.postContent {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.postMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  min-width: 120px;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.date {
+  color: #999;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.detailButton {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .popularPosts {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .postsHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+
+    .sectionTitle {
+      text-align: center;
+    }
+  }
+
+  .postItem {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .postContent {
+    margin-right: 0;
+  }
+
+  .postMeta {
+    align-items: flex-start;
+    min-width: auto;
+  }
+} 

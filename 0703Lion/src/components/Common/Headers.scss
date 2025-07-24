@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #c7e3f8;
+  padding: 1rem;
+  border-bottom: 1px solid #120b0b;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+}
+
+.header-menu {
+  display: flex;
+  gap: 5rem;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.login-button {
+  text-decoration: none;
+  color: #010101;
+}

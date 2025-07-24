@@ -1,0 +1,78 @@
+.card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.imagePlaceholder {
+  flex-basis: 50%;
+  background-color: #e0e0e0;
+  // aspect-ratio는 가로 세로 비율을 고정하는 최신 CSS 속성입니다.
+  // 1 / 1 로 설정하여 정사각형을 만듭니다.
+  aspect-ratio: 1 / 1;
+}
+
+.content {
+  flex-basis: 50%;
+  // padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: c7e3f8;
+}
+
+.number {
+  background-color: #17bbd8;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+
+  // 첫 번째 .description을 제외한 나머지 형제 요소에만 위쪽 여백을 줍니다.
+  &:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+}
+
+.button {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.imagePosition {
+  padding-left: 4rem;
+}
